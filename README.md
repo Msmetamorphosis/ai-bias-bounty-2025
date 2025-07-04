@@ -1,146 +1,140 @@
-# 📂 AI Bias Bounty Hackathon
 
-Welcome to the **2025 AI Bias Bounty Hackathon**!
+# 🚀 AI Bias Bounty Hackathon 2025 – Intersectional Fairness in Loan Approvals
 
-Join us as we explore, detect, and report biases in AI models and datasets. This is an exciting opportunity to contribute to ethical AI while building your skills and network.
+**Crystal Tubbs / Metamorphic Curations**
 
+---
 
-# 🚀 Overview
+## 🎯 Mission Statement
 
-The **AI Bias Bounty Hackathon** challenges participants to build machine learning models and generate technical reports that identifies bias within provided datasets. The goal is to encourage the development of fair and responsible AI systems.
+Modern financial systems risk amplifying historic inequalities when powered by biased AI. This project uncovers and mitigates algorithmic bias in loan approvals using industry-standard methods **and** state-of-the-art intersectional analysis. My goal: build more transparent, fair, and explainable machine learning models—because equitable access is non-negotiable.
 
-**Devpost**: [AI Bias Bounty Hackathon on Devpost](https://ai-bias-bounty-hackathon.devpost.com/)
+---
 
-**Official Website**: [Hack the Fest](https://hackthefest.com/)
+## 🏆 Highlights
 
+- **Deep Intersectional Audit:** Goes beyond one-variable bias, exposing *multi-dimensional disparities* (race × gender × disability, etc.)
+- **Mitigation in Action:** Not just diagnosing, but actively reducing unfairness with cutting-edge algorithms (Fairlearn, AIF360, etc.)
+- **Explainability-First:** SHAP and LIME insights reveal *why* the model acts as it does
+- **Polished Visuals:** Heatmaps and plots spotlight where bias lurks—and how it shrinks after intervention
+- **Reproducibility:** One-click pipeline, ready to run, retrain, and deploy
 
-# 🗓️ Key Dates
+---
 
-| Schedule                        | Date                               |
-| ------------------------------- | ---------------------------------- |
-| Registration Period             | *\[June 4 – June 27, 2025]*        |
-| Kickoff Event                   | *\[June 28, 2025]*                 |
-| Onboarding Period               | *\[June 28 – June 30, 2025]*       |
-| Hackathon Launch                | *\[July 1 – July 3, 2025]*   |
-| Submission Deadline             | *\[July 3, 2025 11:59pm CST]*      |
-| Judging Period                  | *\[July 5 – July 15, 2025]*        |
-| Winners Announced               | *\[July 17, 2025]*                 |
+## 📊 Key Results
 
+- **Accuracy (Test Set):** [PLACEHOLDER]
+- **AUC:** [PLACEHOLDER]
+- **Fairness Metrics (Before/After):**
 
-# 🎯 Objectives
+  | Metric                 | Baseline | Mitigated |
+  |------------------------|----------|-----------|
+  | Statistical Parity     | [x.xx]   | [x.xx]    |
+  | Disparate Impact       | [x.xx]   | [x.xx]    |
+  | Equal Opp. Difference  | [x.xx]   | [x.xx]    |
+  | Average Odds Diff.     | [x.xx]   | [x.xx]    |
+  | Theil Index            | [x.xx]   | [x.xx]    |
 
-Participants will:
+- **Most Improved Group:** 
+- **Remaining Challenge:** 
 
-- Build AI models to analyze and detect bias in provided datasets.
+---
 
-- Generate detailed, well-structured technical reports documenting bias detection.
+## 🔬 Methodology
 
-- Present solutions that contribute to fairness and accountability in AI.
+### 1. **Data Pipeline**
+- **Imputation:** KNNImputer for missing values
+- **Encoding:** One-hot and binary for categorical/sensitive attributes
+- **Scaling:** StandardScaler (fit on train, applied to test)
+- **Feature Selection:** SHAP (top 20 features for best performance + interpretability)
 
+### 2. **Model Training**
+- Benchmarked Logistic Regression, Random Forest, XGBoost, and simple Neural Network
+- Chose [PLACEHOLDER]  for best fairness–accuracy tradeoff
 
-# 🛠️ Getting Started
+### 3. **Bias Detection & Mitigation**
+- **Fairness Metrics:** Calculated with AIF360 & Fairlearn (SPD, DI, EOD, AOD, FNR)
+- **Mitigation:** ExponentiatedGradient, sample reweighting, [and/or other method]
+- **Intersectional Auditing:** Approval rates/metrics for every major demographic intersection
 
-### 1. Register
+### 4. **Interpretability**
+- **SHAP:** Global and local feature importance plots
+- **LIME:** Local explanations on challenging samples
 
-- Sign up on our [official website](https://hackthefest.com/) or [Devpost](https://ai-bias-bounty-hackathon.devpost.com/) to officially enter the hackathon.
+---
 
-### 2. Dataset
+## 📈 Results & Visualizations
 
-- You will receive access to the dataset upon registration.
+- Approval rates by group and intersection:  
+  ![PLACEHOLDER]
+- Fairness metrics table (before/after mitigation)
+- SHAP summary plot for top features
+- LIME explanation screenshot 
 
-### 3. Deliverables
+See `/outputs/` and `/images/` for all graphics and results.
 
-- `loan_model.py` — Python script containing
-    
-    - Data cleaning and preprocessing steps
-    - Feature engineering (e.g., encoding, binning)
-    - Model training (you may use Logistic Regression, Random Forest, XGBoost, or other classification models)
-    - Fairness auditing and bias detection
-    - Well-commented, readable code
+---
 
-- `submission.csv` — Model's output on the provided test dataset
+## 🛠️ How to Reproduce
 
-    - A 2-column CSV:
-      - `ID` – test set identifier
-      - `LoanApproved` – predicted value (0 or 1)
+```bash
+git clone https://github.com/[YOUR_USERNAME]/ai-bias-bounty-2025.git
+cd ai-bias-bounty-2025
 
-- Detailed technical report (`ai_risk_report.docx` or `.pdf` or `.md`) using the provided AI Risk Report template
+# Set up your environment
+python -m venv venv
+source venv/bin/activate        # (or venv\Scripts\activate on Windows)
+pip install -r requirements.txt
 
-- Visual Evidence of Bias: Submit one or both of the following:
+# Run the pipeline
+python loan_model.py            # Or: jupyter notebook loan_model.ipynb
 
-    - `bias_visualization.png` — a clear, readable graphic that illustrates discovered bias
-    - Or a `chart/folder` containing:
-      - Approval rate bar plots by demographic
-      - SHAP/LIME feature importance charts
-      - False positive/negative disparities
-      - Any visual insights related to model behavior or group fairness
-    
-    Label every chart clearly. These visuals will help judges understand your biased insights at a glance.
+# Generate submission
+python generate_submission.py   # Outputs submission.csv
+ ```
+---
 
-- (Optional) `loan_model.ipynb` — Clean and reproducible Jupyter Notebook
+## 🌍 Real-World Impact
 
-    - Include EDA, model pipeline, audits, and final results
-    - Clear markdown explanations and cell comments encouraged
+If deployed as-is, the baseline model would have systematically denied fair access to **[PLACEHOLDER]** by **[PLACEHOLDER]%**.  
+My mitigation strategies reduced the largest observed disparities by **[PLACEHOLDER]**, while maintaining strong predictive accuracy.
 
-- `README.md` — Describes:
+**Key insight:**
 
-    - The problem you addressed
-    - Summary of your model approach and fairness considerations
-    - Instructions to run the project & tools/libraries used
-    - GitHub repo should be public and well-structured
+> _Intersectional bias compounds disadvantage. My approach demonstrates real progress toward algorithmic justice in high-stakes financial decisions._
 
-# 📑 Submission Guidelines
+---
 
-1. Submissions is made on GitHub.
+## 📝 Limitations & Future Work
 
-2. Include:
+- **Data Gaps:** [PLACEHOLDER]
+- **Model Limitations:** [PLACEHOLDER]
+- **Next Steps:** Adversarial debiasing, threshold optimization, model monitoring in production
 
-    - Source code
+---
 
-    - Output file
+## 🎥 Demo
 
-    - Technical report
+[PLACEHOLDER]
 
-    - Demo video (required)
+---
 
-3. Follow all provided instructions and deadlines.
+## 🤝 Contact & Credits
 
-4. After completing your GitHub repo, you must submit the repository link using the official [Final Submission Form](https://forms.gle/ES3CY59jEjdaqCvBA). This is how your entry is registered for judging.
+**Author:** Crystal Tubbs (`msmetamorphosis` on GitHub)  
+Metamorphic Curations
 
+**Inspired by:**
+- AI Fairness 360 (IBM Research)
+- Fairlearn (Microsoft)
+- Bellamy et al., 2018
 
-# 🏆 Judging Criteria
+---
 
-Our judging panel is made up of industry leaders, data scientists, AI ethics professionals, and engineers across tech firms like Meta, Google, Amazon, Visa, JPMorgan, and Walmart, who will evaluate your work based on the following key areas. Each area reflects both the technical quality of your work and your ability to think critically about fairness, impact, and communication.
+## 📄 License
 
-1. Bias Identification (30 points)
-   We’re looking for how well you detected and explained patterns of bias in the dataset or model predictions.
-Strong entries will show clear evidence of bias across multiple demographic groups (e.g., gender, race, income) and thoughtfully discuss false positives/negatives and their real-world implications.
+This project is released under the MIT License.
 
-2. Model Design & Justification (30 points)
-   Your model doesn’t need to be perfect, but your choices should be intentional. This includes the algorithms you used, the features you engineered, and how you approached fairness. We value models that are interpretable and grounded in thoughtful design, not just performance.
+---
 
-3. Interpretability & Insights (20 points)
-   Judges will be looking at how well you explain your results.
-Use charts, plots, tools like SHAP/LIME, or group breakdowns to show what’s happening inside your model, especially when it behaves unfairly.
-
-4. Presentation & Clarity (20 points)
-   Clear communication is key. Your README, demo video, and any supporting materials should help others understand your work without confusion. The best submissions will be organized, polished, and easy to follow, even for non-technical reviewers.
-
-
-# 📣 Stay Connected
-
-Follow us for updates and highlights:
-
-- **Website**: [Hack the Fest](https://hackthefest.com/)
-
-- **Devpost**: [AI Bias Bounty Hackathon](https://ai-bias-bounty-hackathon.devpost.com/)
-
-
-# 📚 Code of Conduct
-
-We are committed to providing a welcoming and inclusive environment for all participants. Please review our [Code of Conduct](./CODE_OF_CONDUCT.md).
-
-
-# 💬 Communication
-
-Join our community via our [Slack Invite Link](https://join.slack.com/t/hackthefest/shared_invite/zt-380la7fd3-xk~zDvk~kZIrqr_HznLHbQ)
+_Ready to make AI lending fair—one intersection at a time._
