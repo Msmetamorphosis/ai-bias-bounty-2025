@@ -78,7 +78,7 @@ See `/outputs/` and `/images/` for all graphics and results.
 ## 🛠️ How to Reproduce
 
 ```bash
-git clone https://github.com/[YOUR_USERNAME]/ai-bias-bounty-2025.git
+git clone https://github.com/msmetamorphosis/ai-bias-bounty-2025.git
 cd ai-bias-bounty-2025
 
 # Set up your environment
