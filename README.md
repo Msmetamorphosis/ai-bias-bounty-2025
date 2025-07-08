@@ -118,4 +118,3 @@ This project is released under the MIT License.
 
 ---
 
-_Ready to make AI lending fair—one intersection at a time._
