@@ -75,25 +75,6 @@ See `/outputs/` and `/images/` for all graphics and results.
 
 ---
 
-## 🛠️ How to Reproduce
-
-```bash
-git clone https://github.com/msmetamorphosis/ai-bias-bounty-2025.git
-cd ai-bias-bounty-2025
-
-# Set up your environment
-python -m venv venv
-source venv/bin/activate        # (or venv\Scripts\activate on Windows)
-pip install -r requirements.txt
-
-# Run the pipeline
-python loan_model.py            # Or: jupyter notebook loan_model.ipynb
-
-# Generate submission
-python generate_submission.py   # Outputs submission.csv
- ```
----
-
 ## 🌍 Real-World Impact
 
 If deployed as-is, the baseline model would have systematically denied fair access to **[PLACEHOLDER]** by **[PLACEHOLDER]%**.  
